@@ -9,7 +9,7 @@ on:
         default: 'https://transfer.sh/(RECOMMENDED)'
 
 env:
-  RECOVERY_URL: https://ln5.sync.com/dl/582517cc0/8f7zpzr2-sy5zcxyg-shdb62gb-ig75xmqr
+  RECOVERY_URL: https://0x0.st/Kehf.img
 
 jobs:
   build:
