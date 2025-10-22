@@ -35,8 +35,14 @@ jobs:
 
     - name: Download magiskboot
       run: |
-        curl -L -o magiskboot https://github.com/svoboda18/magiskboot/releases/download/1.0-3/magiskboot
+        curl -L -o magisk.zip https://github.com/topjohnwu/Magisk/releases/download/v26.1/Magisk-v26.1.zip
+        unzip magisk.zip magiskboot
         chmod +x magiskboot
+
+    - name: Verify magiskboot
+      run: |
+        file magiskboot
+        ls -lh magiskboot
 
     - name: Patch Process-2
       run: |
