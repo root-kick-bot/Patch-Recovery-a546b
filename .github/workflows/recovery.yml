@@ -32,11 +32,10 @@ jobs:
         echo "Listing recovery.img:"
         ls -lh recovery.img || echo "File not found"
 
-    - name: Patch Process-1
+    - name: Download magiskboot
       run: |
-        chmod a+x script1.sh
-        chmod a+x magiskboot
-        ./script1.sh || true
+        curl -L -o magiskboot https://github.com/topjohnwu/Magisk/releases/download/v26.1/magiskboot
+        chmod +x magiskboot
 
     - name: Patch Process-2
       run: |
