@@ -9,7 +9,7 @@ on:
         default: 'https://transfer.sh/(RECOMMENDED)'
 
 env:
-  RECOVERY_URL: https://0x0.st/Kehf.img
+  RECOVERY_URL: ${{ github.event.inputs.RECOVERY_URL }}
 
 jobs:
   build:
