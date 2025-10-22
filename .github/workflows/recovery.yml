@@ -35,14 +35,11 @@ jobs:
 
     - name: Download magiskboot
       run: |
-        curl -L -o magisk.zip https://github.com/topjohnwu/Magisk/releases/download/v26.1/Magisk-v26.1.zip
-        unzip magisk.zip magiskboot
+        curl -L -o magiskboot https://raw.githubusercontent.com/Androidacy/magiskboot-binaries/main/magiskboot-linux
         chmod +x magiskboot
 
     - name: Verify magiskboot
-      run: |
-        file magiskboot
-        ls -lh magiskboot
+      run: file magiskboot
 
     - name: Patch Process-2
       run: |
