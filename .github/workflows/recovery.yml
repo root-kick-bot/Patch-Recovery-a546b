@@ -23,7 +23,8 @@ jobs:
     - name: Fetch image from URL
       run: |
         echo "Downloading from: ${{ github.event.inputs.RECOVERY_URL }}"
-        wget "${{ github.event.inputs.RECOVERY_URL }}" -O recovery.img
+        curl -L "${{ github.event.inputs.RECOVERY_URL }}" -o recovery.img
+        ls -lh recovery.img
 
     - name: Patch Process-1
       run: |
