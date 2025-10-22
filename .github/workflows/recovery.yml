@@ -25,7 +25,6 @@ jobs:
 
     - name: Fetch image from URL
       run: |
-        RECOVERY_URL="${{ github.event.inputs.RECOVERY_URL }}"
         echo "Downloading from: $RECOVERY_URL"
         wget "$RECOVERY_URL"
 
