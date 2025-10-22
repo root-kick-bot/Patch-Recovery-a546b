@@ -21,11 +21,9 @@ jobs:
         sudo apt install git wget lz4 tar openssl python3 -y
 
     - name: Fetch image from URL
-      env:
-        RECOVERY_URL: ${{ github.event.inputs.RECOVERY_URL }}
       run: |
-        echo "Downloading from: $RECOVERY_URL"
-        wget "$RECOVERY_URL" -O recovery.img
+        echo "Downloading from: ${{ github.event.inputs.RECOVERY_URL }}"
+        wget "${{ github.event.inputs.RECOVERY_URL }}" -O recovery.img
 
     - name: Patch Process-1
       run: |
