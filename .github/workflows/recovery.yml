@@ -8,9 +8,6 @@ on:
         required: true
         default: 'https://transfer.sh/(RECOMMENDED)'
 
-env:
-  RECOVERY_URL: ${{ github.event.inputs.RECOVERY_URL }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,8 +22,8 @@ jobs:
 
     - name: Fetch image from URL
       run: |
-        echo "Downloading from: $RECOVERY_URL"
-        wget "$RECOVERY_URL"
+        echo "Downloading from: ${{ github.event.inputs.RECOVERY_URL }}"
+        wget "${{ github.event.inputs.RECOVERY_URL }}"
 
     - name: Patch Process-1
       run: |
