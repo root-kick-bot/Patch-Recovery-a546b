@@ -15,6 +15,11 @@ jobs:
     - name: Check Out
       uses: actions/checkout@v3
 
+    - name: Debug input
+      run: |
+        echo "RECOVERY_URL from input:"
+        echo "${{ github.event.inputs.RECOVERY_URL }}"
+
     - name: Prepare the environment
       run: |
         sudo apt update
@@ -23,8 +28,9 @@ jobs:
     - name: Fetch image from URL
       run: |
         echo "Downloading from: ${{ github.event.inputs.RECOVERY_URL }}"
-        curl -L "${{ github.event.inputs.RECOVERY_URL }}" -o recovery.img
-        ls -lh recovery.img
+        wget "${{ github.event.inputs.RECOVERY_URL }}" -O recovery.img || (echo "Download failed" && exit 1)
+        echo "Listing recovery.img:"
+        ls -lh recovery.img || echo "File not found"
 
     - name: Patch Process-1
       run: |
