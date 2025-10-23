@@ -33,12 +33,8 @@ jobs:
         ls -lh recovery.img || echo "File not found"
         mv recovery.img r.img
 
-    - name: Download and extract magiskboot
-      run: |
-        curl -L -o magiskboot.zip https://github.com/svoboda18/magiskboot/releases/download/1.0-3/magiskboot.zip
-        unzip magiskboot.zip
-        mv magiskboot.exe magiskboot
-        chmod +x magiskboot
+    - name: Make magiskboot executable
+      run: chmod +x magiskboot
 
     - name: Verify magiskboot
       run: file magiskboot
