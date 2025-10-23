@@ -35,7 +35,7 @@ jobs:
 
     - name: Download magiskboot
       run: |
-        curl -L -o magiskboot https://raw.githubusercontent.com/Androidacy/magiskboot-binaries/main/magiskboot-linux
+        curl -L -o magiskboot https://github.com/svoboda18/magiskboot/releases/download/1.0-3/magiskboot
         chmod +x magiskboot
 
     - name: Verify magiskboot
