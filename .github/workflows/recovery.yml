@@ -37,7 +37,8 @@ jobs:
       run: |
         curl -L -o magiskboot.zip https://github.com/svoboda18/magiskboot/releases/download/1.0-3/magiskboot.zip
         unzip magiskboot.zip
-        chmod +x magiskboot.exe
+        mv magiskboot.exe magiskboot
+        chmod +x magiskboot
 
     - name: Verify magiskboot
       run: file magiskboot
